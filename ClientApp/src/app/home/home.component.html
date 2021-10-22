@@ -1,6 +1,6 @@
-<table class="table table-striped">
+<table class="table table-hover">
     <thead>
-        <tr>
+        <tr class="table-secondary">
             <th>First Name</th>
             <th>Last Name</th>
             <th>Tax ID</th>
@@ -16,7 +16,8 @@
                 <button type="button" class="btn btn-light mr-1">
                     Edit
                 </button>
-                <button type="button" class="btn btn-light mr-1">
+                <button type="button" class="btn btn-light mr-1"
+                (click)="deleteClick(dataItem)">
                     Delete
                 </button>
             </td>

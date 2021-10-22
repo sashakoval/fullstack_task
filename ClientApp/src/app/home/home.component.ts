@@ -20,4 +20,13 @@ export class HomeComponent implements OnInit {
       this.EmployeeList=data
     })
   }
+
+  deleteClick(item) {
+    if(confirm('Are you sure?')){
+      this.service.deleteEmployee(item.EmployeeId).subscribe(data=>{
+        alert(data.toString());
+        this.refreshEmpList();
+      })
+    }
+  }
 }
