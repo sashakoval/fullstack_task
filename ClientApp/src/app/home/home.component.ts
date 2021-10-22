@@ -1,8 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  constructor(private service:SharedService) {}
+
+  EmployeeList:any=[];
+
+  ngOnInit(): void {
+    this.refreshEmpList();
+  }
+
+  refreshEmpList(){
+    this.service.getEmpList().subscribe(data=>{
+      this.EmployeeList=data
+    })
+  }
 }
