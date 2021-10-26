@@ -24,4 +24,8 @@ readonly APIUrl = "https://localhost:5001/api";
   deleteEmployee(val:any){
     return this.http.delete(this.APIUrl+`/employee/${val}`);
   }
+
+  deleteAllEmployees(){
+    return this.http.delete(this.APIUrl+'/employee')
+  }
 }

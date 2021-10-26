@@ -29,4 +29,12 @@ export class HomeComponent implements OnInit {
       })
     }
   }
+  deleteAllClick() {
+    if(confirm('Are you really want to delete all employees?')) {
+      this.service.deleteAllEmployees().subscribe(data=>{
+        alert(data.toString());
+        this.refreshEmpList();
+      })
+    }
+  }
 }
