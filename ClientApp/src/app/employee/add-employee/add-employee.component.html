@@ -3,7 +3,7 @@
   <div class="col-md-6">
     <div class="form-floating mb-3">
       <input type="text" formControlName="firstName" minlength="2" class="form-control" id="floatingInput" placeholder="Example: Alexey">
-      <label for="floatingInput">First Name<span color="red">*</span></label>
+      <label for="floatingInput">First Name<span class="red">*</span></label>
       <!-- <div *ngIf="employeeForm.controls['firstName'].invalid && (employeeFrom.controls['firstName'].dirty || employeeForm.controls['firstName'].touched)"
         class="alert alert-danger">
 
@@ -20,20 +20,20 @@
   <div class="col-md-6">
     <div class="form-floating mb-3">
       <input type="text" formControlName="lastName" class="form-control" id="floatingInput" placeholder="Example: Kaminsky">
-      <label for="floatingInput">Last Name*</label>
+      <label for="floatingInput">Last Name<span class="red">*</span></label>
     </div>
   </div>
 
   <div class="col-md-6">
     <div class="form-floating mb-3">
       <input type="number" formControlName="taxId" class="form-control" id="floatingInput" placeholder="Example: 1212121">
-      <label for="floatingInput">Tax ID*</label>
+      <label for="floatingInput">Tax ID<span class="red">*</span></label>
     </div>
   </div>
   <div class="col-md-6">
     <div class="form-floating mb-3">
       <input type="text" formControlName="phoneNumber" class="form-control" id="floatingInput" placeholder="Example: 3809866732">
-      <label for="floatingInput">Phone Number*</label>
+      <label for="floatingInput">Phone Number<span class="red">*</span></label>
     </div>
   </div>
   <div class="col-md-6">
@@ -43,7 +43,7 @@
         <option value="Male">Male</option>
         <option value="Female">Female</option>
       </select>
-      <label for="floatingSelect">Sex*</label>
+      <label for="floatingSelect">Sex<span class="red">*</span></label>
     </div>
   </div>
   <div class="col-md-6">
@@ -58,18 +58,16 @@
       <label for="floatingInput">Hobbies</label>
     </div>
   </div>
-  <p>Form Status: {{ employeeForm.status }}</p>
   <div class="col-12">
-    <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-primary">Add Employee</button>
+    <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-primary">Add Employee
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+      </svg>
+    </button>
   </div>
 </form>
 
-<pre>{{employeeForm.get('firstName').valid}}</pre>
-<pre>{{employeeForm.get('lastName').valid}}</pre>
-<pre>{{employeeForm.get('taxId').valid}}</pre>
-<pre>{{employeeForm.get('phoneNumber').valid}}</pre>
-<pre>{{employeeForm.get('sex').valid}}</pre>
-<pre>{{employeeForm.get('birthDate').valid}}</pre>
-<pre>{{employeeForm.get('hobbies').valid}}</pre>
+
 
 

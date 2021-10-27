@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { SharedService } from '../shared.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service:SharedService) {}
+  constructor(private service:SharedService, private router: Router) {}
 
   EmployeeList:any=[];
 
@@ -36,5 +37,9 @@ export class HomeComponent implements OnInit {
         this.refreshEmpList();
       })
     }
+  }
+
+  toDetails(id) {
+    this.router.navigate([`employee/${id}`]);
   }
 }

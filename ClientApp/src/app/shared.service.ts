@@ -11,17 +11,21 @@ readonly APIUrl = "https://localhost:5001/api";
 
   getEmpList():Observable<any[]>{
    return this.http.get<any>(this.APIUrl+'/employee');
- } 
+ }
+ 
+ getEmpById(val:number):Observable<any[]> {
+   return this.http.get<any>(this.APIUrl+`/employee/${val}`)
+ }
 
-  addEmployee(val:any) {
+  addEmployee(val:number) {
     return this.http.post(this.APIUrl+'/employee', val);
   }
 
-  updateEmployee(val:any){
-    return this.http.put(this.APIUrl+'/employee', val);
+  updateEmployee(val:number, obj:object){
+    return this.http.put(this.APIUrl+`/employee/${val}`, obj);
   }
 
-  deleteEmployee(val:any){
+  deleteEmployee(val:number){
     return this.http.delete(this.APIUrl+`/employee/${val}`);
   }
 
